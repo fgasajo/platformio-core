@@ -70,6 +70,7 @@ def pioplus_call(args, **kwargs):
     os.environ['PYTHONPYSITEDIR'] = pm.get_package_dir(
         PACKAGE_DEPS['pysite']['name'], PACKAGE_DEPS['pysite']['requirements'])
     util.copy_pythonpath_to_osenv()
+    print "debug, PYTHONPATH", os.environ['PYTHONPATH']
     code = subprocess.call([pioplus_path] + args, **kwargs)
 
     # handle remote update request
